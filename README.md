@@ -104,6 +104,7 @@ This tool is made only for ethical hacking, privacy, and educational use. Do not
 **Run the install.py script**
 
 **Then type `n` for uninstall**
+
 ---
 
 ## Author
