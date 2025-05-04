@@ -20,7 +20,6 @@
 - **Linux Distributions like `kali linux` , `parrot os` `ubuntu`** 
 - **Tor (automatically installed if not found)**
 
-iptables
 ## Installation
 
 1. **Clone the repository:**
