@@ -11,7 +11,7 @@
 - Lets you manually or automatically change your IP
 - Shows your current Tor IP and location
 - Easy to use with a beginner-friendly interface
-- Works on both **Linux** and **Termux**
+- Works on  **Linux Distributions like `parrot os`, `ubuntu`, `kali linux`** 
 
 ---
 
