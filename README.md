@@ -99,6 +99,13 @@ This tool is made only for ethical hacking, privacy, and educational use. Do not
 
 ---
 
+## Uninstallation
+
+**Run the install.py script**
+
+**Then type `n` for uninstall**
+---
+
 ## Author
 - **Sreeraj**
 - **GitHub:** https://github.com/s-r-e-e-r-a-j 
