@@ -156,7 +156,6 @@ def check_root():
 
 def install_tor():
     if shutil.which("tor") is not None:
-        print(" \033[92m[+]\033[0m Tor is already installed.")
         return True
 
     print(" [*] Tor is not installed. Attempting to install Tor...")
