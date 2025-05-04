@@ -44,7 +44,7 @@ sudo python3 install.py
 
 ## Usage
 
-Run with sudo:
+**Run with sudo:**
 ```bash
 sudo zerotrace [option]
 ```
