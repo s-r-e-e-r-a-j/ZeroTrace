@@ -151,7 +151,7 @@ DNSPort {self.dns_port}
 
 def install_tor():
     if shutil.which("tor") is not None:
-        print("[+] Tor is already installed.")
+        print("\033[92m[+]\033[0m Tor is already installed.")
         return True
 
     print("[*] Tor is not installed. Attempting to install Tor...")
@@ -165,6 +165,7 @@ def install_tor():
 
     if shutil.which("tor") is not None:
         print("[+] Tor installed successfully.")
+        subprocess.check_call(["clear"])
         return True
     else:
         print("[-] Tor installation failed.")
