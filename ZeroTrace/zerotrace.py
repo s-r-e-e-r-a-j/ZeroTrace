@@ -175,7 +175,6 @@ def install_tor():
 def main():
     #check Tor is installed or not
     install_tor()
-    subprocess.check_call(["clear"])
     # Set up command line interface
     parser = ArgumentParser(
         description='ZeroTrace - Route your internet traffic through Tor with automatic IP switching')
