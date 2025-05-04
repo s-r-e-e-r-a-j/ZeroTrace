@@ -3,7 +3,7 @@
 
 from subprocess import call, check_call, CalledProcessError
 from os.path import isfile, basename
-from os import devnull
+from os import devnull, geteuid
 from sys import exit, stdout, stderr
 from atexit import register
 from argparse import ArgumentParser
@@ -149,6 +149,11 @@ DNSPort {self.dns_port}
         call(['kill', '-HUP', '%s' % subprocess.getoutput('pidof tor')])
         self.show_current_ip()
 
+def check_root():
+    if os.geteuid() != 0:
+        print(" \033[91m[!]\033[0m please run as root or with sudo.")
+        sys.exit(1)  
+
 def install_tor():
     if shutil.which("tor") is not None:
         print(" \033[92m[+]\033[0m Tor is already installed.")
@@ -173,6 +178,8 @@ def install_tor():
 
 
 def main():
+    #check user run as root or with sudo
+    check_root()
     #check Tor is installed or not
     install_tor()
     # Set up command line interface
