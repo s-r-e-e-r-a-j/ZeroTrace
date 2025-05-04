@@ -1,3 +1,6 @@
+# Developer : Sreeraj
+# GitHub : https://github.com/s-r-e-e-r-a-j
+
 from subprocess import call, check_call, CalledProcessError
 from os.path import isfile, basename
 from os import devnull
