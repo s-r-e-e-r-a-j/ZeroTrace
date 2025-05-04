@@ -20,6 +20,8 @@
 - **Linux Distributions like `kali linux` , `parrot os` `ubuntu`** 
 - **Tor (automatically installed if not found)**
 
+---
+
 ## Installation
 
 1. **Clone the repository:**
@@ -46,6 +48,8 @@ Run with sudo:
 ```bash
 sudo zerotrace [option]
 ```
+---
+
 ## Options
 
 | Option             | Short Form | Description                                   |
@@ -56,6 +60,8 @@ sudo zerotrace [option]
 | `--new-ip`         | `-n`       | Request a new identity from Tor               |
 | `--auto`           | `-a`       | Auto change IP at intervals                   |
 | `--time <seconds>` | `-t`       | Set interval duration (use with `--auto`)     |
+
+---
 
 ## Examples
 **Start routing:**
@@ -86,13 +92,18 @@ sudo zerotrace --auto --time 300
 ```bash
 sudo zerotrace --stop
 ```
+---
 
 ## Disclaimer
 This tool is made only for ethical hacking, privacy, and educational use. Do not use it for illegal purposes. The author is not responsible for any misuse.
 
+---
+
 ## Author
 - **Sreeraj**
 - **GitHub:** https://github.com/s-r-e-e-r-a-j 
+
+--- 
 
 ## License
 This project is licensed under the MIT License.
