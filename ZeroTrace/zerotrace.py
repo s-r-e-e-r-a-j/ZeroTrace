@@ -150,7 +150,7 @@ DNSPort {self.dns_port}
         self.show_current_ip()
 
 def check_root():
-    if os.geteuid() != 0:
+     if geteuid() != 0:
         print(" \033[91m[!]\033[0m please run as root or with sudo.")
         sys.exit(1)  
 
