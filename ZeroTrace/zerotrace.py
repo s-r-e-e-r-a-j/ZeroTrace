@@ -152,7 +152,7 @@ DNSPort {self.dns_port}
 def check_root():
      if geteuid() != 0:
         print(" \033[91m[!]\033[0m please run as root or with sudo.")
-        sys.exit(1)  
+        exit(1)  
 
 def install_tor():
     if shutil.which("tor") is not None:
