@@ -217,6 +217,7 @@ def main():
             zerotrace.change_ip_address()
         elif args.auto:
             interval = args.time
+            print(f"\033[92m[+]\033[0m ZeroTrace: Auto IP switching enabled. Interval:{interval} seconds")
             try:
                 while True:
                     zerotrace.change_ip_address()
