@@ -161,8 +161,8 @@ def install_tor():
     print(" [*] Tor is not installed. Attempting to install Tor...")
 
     try:
-        check_call(["sudo", "apt", "update"])
-        check_call(["sudo", "apt", "install", "-y", "tor"])
+        check_call(["sudo", "apt-get", "update"])
+        check_call(["sudo", "apt-get", "install", "-y", "tor"])
     except CalledProcessError:
         print(" [-] Failed to install Tor. Please install it manually.")
         return False
