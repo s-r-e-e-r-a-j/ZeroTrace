@@ -161,15 +161,15 @@ def install_tor():
     print(" [*] Tor is not installed. Attempting to install Tor...")
 
     try:
-        subprocess.check_call(["sudo", "apt", "update"])
-        subprocess.check_call(["sudo", "apt", "install", "-y", "tor"])
-    except subprocess.CalledProcessError:
+        check_call(["sudo", "apt", "update"])
+        check_call(["sudo", "apt", "install", "-y", "tor"])
+    except CalledProcessError:
         print(" [-] Failed to install Tor. Please install it manually.")
         return False
 
     if shutil.which("tor") is not None:
         print(" [+] Tor installed successfully.")
-        subprocess.check_call(["clear"])
+        check_call(["clear"])
         return True
     else:
         print(" [-] Tor installation failed.")
