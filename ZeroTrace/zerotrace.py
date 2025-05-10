@@ -3,7 +3,7 @@
 
 from subprocess import call, check_call, CalledProcessError
 from os.path import isfile, basename
-from os import devnull, geteuid
+from os import devnull, geteuid, system
 from sys import exit, stdout, stderr
 from atexit import register
 from argparse import ArgumentParser
@@ -169,7 +169,7 @@ def install_tor():
 
     if shutil.which("tor") is not None:
         print(" [+] Tor installed successfully.")
-        check_call(["clear"])
+        system("clear")
         return True
     else:
         print(" [-] Tor installation failed.")
