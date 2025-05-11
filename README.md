@@ -18,7 +18,7 @@ ZeroTrace is a powerful ethical hacking tool for anonymization, developed in Pyt
 
 ## Requirements
 - **Python 3**
-- **Linux Distributions like `kali linux` , `parrot os` `ubuntu`** 
+- **Linux Distributions like `kali linux` , `parrot os` ,`ubuntu`** 
 - **Tor (automatically installed if not found)**
 
 ---
