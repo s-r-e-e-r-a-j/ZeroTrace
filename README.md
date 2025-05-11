@@ -1,6 +1,6 @@
 # ZeroTrace
 
-**ZeroTrace** is an ethical hacking tool made using Python. It helps you stay anonymous online by routing all your traffic through the Tor network. Using this tool, **no one can track your real IP address**.
+ZeroTrace is a powerful ethical hacking tool for anonymization, developed in Python. It helps you stay anonymous online by routing all of your system’s network traffic—not just browser traffic—through the Tor network. As a result, tracking your online activity, IP address, and location becomes extremely difficult.
 
 ---
 
@@ -8,6 +8,7 @@
 
 - Sends all your internet traffic through the Tor network
 - Hides your real IP address and location
+- Makes it extremely difficult to track your online activity
 - Lets you manually or automatically change your IP
 - Shows your current Tor IP and location
 - Easy to use with a beginner-friendly interface
