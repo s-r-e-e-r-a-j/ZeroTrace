@@ -18,8 +18,8 @@ from argparse import ArgumentParser
 DNS_PORT = "53"  # DNS port for Tor
 TOR_NETWORK = "10.0.0.0/10"  # Virtual network for Tor
 LOCALHOST = "127.0.0.1"  # Local loopback address
-EXCLUDED_NETWORKS = ["192.168.0.0/16", "172.16.0.0/12"]  # Networks to exclude from Tor
-EXCLUDED_IPS = ["127.0.0.0/9", "127.128.0.0/10", "127.0.0.0/8"]  # IPs to exclude
+EXCLUDED_NETWORKS = ("192.168.0.0/16", "172.16.0.0/12") # Networks to exclude from Tor
+EXCLUDED_IPS = ("127.0.0.0/9", "127.128.0.0/10", "127.0.0.0/8")  # IPs to exclude
 TOR_USER = subprocess.getoutput("id -ur debian-tor")  # Tor user ID
 TOR_PORT = "9040"  # Tor transparent proxy port
 TOR_CONFIG = '/etc/tor/torrc'  # Tor configuration file path
