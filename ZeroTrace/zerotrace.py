@@ -137,7 +137,7 @@ def get_location_info(ip_address):
     try:
         response = requests.get(f"http://ip-api.com/json/{ip_address}")
         data = response.json()
-        return data["country_name"], data["city"]
+        return data["country"], data["city"]
     except Exception as error:
         print(f"\033[91m[!]\033[0m Error getting location: {error}")
         return None, None
