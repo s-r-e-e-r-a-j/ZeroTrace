@@ -205,7 +205,7 @@ def main():
                        help='Show current public IP address')
     parser.add_argument('-a', '--auto', action='store_true', 
                        help='Automatically change IP at regular intervals')
-    parser.add_argument('-t', '--time', type=int, default=3600, 
+    parser.add_argument('-t', '--time', type=int, default=500, 
                        help='Interval for automatic IP changes (seconds)')
     
     args = parser.parse_args()
