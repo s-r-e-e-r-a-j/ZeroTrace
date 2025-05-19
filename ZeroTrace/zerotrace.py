@@ -68,7 +68,7 @@ def setup_network_rules():
         with open(devnull, 'w') as null_device:
             try:
                 tor_restart = check_call(
-                    ["service", "tor", "restart"],
+                    ["systemctl", "restart", "tor"],
                     stdout=null_device, stderr=null_device)
                 if tor_restart == 0:
                     print(" \033[92m[+]\033[0m ZeroTrace: Privacy mode \033[92m[ACTIVE]\033[0m")
