@@ -12,13 +12,13 @@ ZeroTrace is a powerful ethical hacking tool for anonymization, developed in Pyt
 - Lets you manually or automatically change your IP
 - Shows your current Tor IP and location
 - Easy to use with a beginner-friendly interface
-- Works on  **Linux Distributions like `parrot os`, `ubuntu`, `kali linux`** 
+- Works on  ** Debian,RedHat,Arch** 
 
 ---
 
 ## Requirements
 - **Python 3**
-- **Linux Distributions like `kali linux` , `parrot os` ,`ubuntu`** 
+- **Linux distros like Debian, RedHat, Arch** 
 - **Tor (automatically installed if not found)**
 
 ---
