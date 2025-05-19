@@ -118,7 +118,7 @@ def show_current_ip():
     public_ip = None
     
     # Try to get IP from Tor project API
-    for attempt in range(12):
+    for attempts in range(9):
          try:
              re_s = requests.get('https://check.torproject.org/api/ip', timeout=5)
              re_s.raise_for_status()
