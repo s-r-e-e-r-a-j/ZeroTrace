@@ -146,7 +146,6 @@ def show_current_ip():
     """Display the current public IP address and location."""
     print(" \033[93m[*]\033[0m ZeroTrace: Fetching public IP address...")
     public_ip = None
-    
     # Try to get IP from Tor project API
     for attempts in range(9):
          try:
