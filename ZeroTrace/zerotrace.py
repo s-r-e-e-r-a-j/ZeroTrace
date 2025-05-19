@@ -125,10 +125,10 @@ def show_current_ip():
              public_ip = re_s.json().get('IP')
              if public_ip:
                 break  # Exit the loop if IP is successfully retrieved
-          except requests.exceptions.RequestException:
+         except requests.exceptions.RequestException:
                  print(" \033[93m[?]\033[0m ZeroTrace: Waiting for IP address...")
                  sleep(5)
-          except ValueError:
+         except ValueError:
                   break  # Invalid JSON response
     
     # Fallback to alternative method if Tor project API fails
