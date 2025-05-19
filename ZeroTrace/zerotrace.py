@@ -121,15 +121,18 @@ def show_current_ip():
     public_ip = None
     
     # Try to get IP from Tor project API
-    while attempts < 12 and not public_ip:
-        attempts += 1
-        try:
-            public_ip = json.load(urlopen('https://check.torproject.org/api/ip'))['IP']
-        except URLError:
-            sleep(5)
-            print(" \033[93m[?]\033[0m ZeroTrace: Waiting for IP address...")
-        except ValueError:
-            break
+    for attempt in range(12):
+    try:
+        re_s = requests.get('https://check.torproject.org/api/ip', timeout=5)
+        re_s.raise_for_status()
+        public_ip = re_s.json().get('IP')
+        if public_ip:
+            break  # Exit the loop if IP is successfully retrieved
+    except requests.exceptions.RequestException:
+        print(" \033[93m[?]\033[0m ZeroTrace: Waiting for IP address...")
+        sleep(5)
+    except ValueError:
+        break  # Invalid JSON response
     
     # Fallback to alternative method if Tor project API fails
     if not public_ip:
