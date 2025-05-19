@@ -20,10 +20,36 @@ TOR_NETWORK = "10.0.0.0/10"  # Virtual network for Tor
 LOCALHOST = "127.0.0.1"  # Local loopback address
 EXCLUDED_NETWORKS = ("192.168.0.0/16", "172.16.0.0/12") # Networks to exclude from Tor
 EXCLUDED_IPS = ("127.0.0.0/9", "127.128.0.0/10", "127.0.0.0/8")  # IPs to exclude
-TOR_USER = subprocess.getoutput("id -ur debian-tor")  # Tor user ID
 TOR_PORT = "9040"  # Tor transparent proxy port
 TOR_CONFIG = '/etc/tor/torrc'  # Tor configuration file path
 LOG_FILE = "zerotrace.log"  # Log file path
+
+# Detect Linux distribution
+def detect_distribution():
+    """Detect the Linux distribution."""
+    try:
+        with open('/etc/os-release', 'r') as f:
+            content = f.read()
+            if 'debian' in content.lower() or 'ubuntu' in content.lower():
+                return 'debian'
+            elif 'fedora' in content.lower() or 'centos' in content.lower() or 'rhel' in content.lower():
+                return 'fedora'
+            elif 'arch' in content.lower():
+                return 'arch'
+            else:
+                return 'unknown'
+    except FileNotFoundError:
+        return 'unknown'
+
+DISTRO = detect_distribution()
+
+# Set Tor user based on distribution
+if DISTRO == 'debian':
+    TOR_USER = subprocess.getoutput("id -ur debian-tor")
+elif DISTRO == 'fedora':
+    TOR_USER = subprocess.getoutput("id -ur toranon")
+else:
+    TOR_USER = subprocess.getoutput("id -ur tor")  # Fallback for other distributions
 
 # Configuration to append to torrc file
 TOR_CONFIG_CONTENT = f'''
@@ -64,9 +90,14 @@ def setup_network_rules():
         """Restart Tor service when program exits."""
         with open(devnull, 'w') as null_device:
             try:
-                tor_restart = check_call(
-                    ["systemctl", "restart", "tor"],
-                    stdout=null_device, stderr=null_device)
+                if DISTRO == 'debian':
+                    service_cmd = ["systemctl", "restart", "tor"]
+                elif DISTRO == 'fedora':
+                    service_cmd = ["systemctl", "restart", "tor"]
+                else:
+                    service_cmd = ["systemctl", "restart", "tor"]  # Fallback
+                
+                tor_restart = check_call(service_cmd, stdout=null_device, stderr=null_device)
                 if tor_restart == 0:
                     print(" \033[92m[+]\033[0m ZeroTrace: Privacy mode \033[92m[ACTIVE]\033[0m")
                     show_current_ip()
@@ -169,8 +200,16 @@ def install_tor():
     print(" [*] Tor is not installed. Attempting to install Tor...")
 
     try:
-        check_call(["sudo", "apt-get", "update"])
-        check_call(["sudo", "apt-get", "install", "-y", "tor"])
+        if DISTRO == 'debian':
+            check_call(["sudo", "apt-get", "update"])
+            check_call(["sudo", "apt-get", "install", "-y", "tor"])
+        elif DISTRO == 'fedora':
+            check_call(["sudo", "dnf", "install", "-y", "tor"])
+        elif DISTRO == 'arch':
+            check_call(["sudo", "pacman", "-Sy", "--noconfirm", "tor"])
+        else:
+            print(" [-] Unsupported distribution. Please install Tor manually.")
+            return False
     except CalledProcessError:
         print(" [-] Failed to install Tor. Please install it manually.")
         return False
