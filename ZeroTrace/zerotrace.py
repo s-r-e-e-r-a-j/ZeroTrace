@@ -5,9 +5,6 @@
 import subprocess
 import os
 import sys
-import json
-from urllib.request import urlopen
-from urllib.error import URLError
 from time import sleep
 import requests
 import shutil
