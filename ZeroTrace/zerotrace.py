@@ -133,7 +133,8 @@ def show_current_ip():
     
     # Fallback to alternative method if Tor project API fails
     if not public_ip:
-        public_ip = subprocess.getoutput('wget -qO - ifconfig.me')
+           res = requests.get('https://httpbin.org/ip')
+           public_ip = res.json().get('origin')
     if not public_ip:
         exit("\033[91m[!]\033[0m ZeroTrace: Could not determine public IP address!")
 
