@@ -1,6 +1,6 @@
 # ZeroTrace
 
-ZeroTrace is a powerful ethical hacking tool for anonymization, developed in Python. It helps you stay anonymous online by routing all of your system’s network traffic—not just browser traffic—through the Tor network. As a result, tracking your online activity, IP address, and location becomes extremely difficult.
+ZeroTrace is a powerful ethical hacking tool for anonymization, developed in Bash. It helps you stay anonymous online by routing all of your system’s network traffic—not just browser traffic—through the Tor network. As a result, tracking your online activity, IP address, and location becomes extremely difficult.
 
 ---
 
@@ -17,9 +17,9 @@ ZeroTrace is a powerful ethical hacking tool for anonymization, developed in Pyt
 ---
 
 ## Requirements
-- **Python 3**
+- **Gnu Bash**
 - **Linux distros like Debian, RedHat, Arch** 
-- **Tor (automatically installed if not found)**
+- **Tor and jq (automatically installed if not found)**
 
 ---
 
@@ -37,9 +37,9 @@ cd ZeroTrace
 ```bash
 cd ZeroTrace
 ```
-4. **Run the install.py script:**
+4. **Run the install.sh script:**
 ```bash
-sudo python3 install.py
+sudo bash install.sh
 ```
 **Then type `y` for install**
 
@@ -59,8 +59,7 @@ sudo zerotrace [option]
 | `--stop`           | `-x`       | Stop Tor and restore settings                 |
 | `--ip`             | `-i`       | Show current Tor IP and location              |
 | `--new-ip`         | `-n`       | Request a new identity from Tor               |
-| `--auto`           | `-a`       | Auto change IP at intervals                   |
-| `--time <seconds>` | `-t`       | Set interval duration (use with `--auto`)     |
+| `--auto`           | `-a`       | Auto change IP at intervals default [500]     |
 
 ---
 
@@ -85,7 +84,7 @@ sudo zerotrace --new-ip
 **Auto change IP every 5 minutes:**
 
 ```bash
-sudo zerotrace --auto --time 300
+sudo zerotrace --auto 300
 ```
 
 **Stop and reset:**
