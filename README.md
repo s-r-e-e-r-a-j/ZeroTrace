@@ -59,7 +59,7 @@ sudo zerotrace [option]
 | `--stop`           | `-x`       | Stop Tor and restore settings                 |
 | `--ip`             | `-i`       | Show current Tor IP and location              |
 | `--new-ip`         | `-n`       | Request a new identity from Tor               |
-| `--auto`           | `-a`       | Auto change IP at intervals default [500]     |
+| `--auto`           | `-a`       | Auto change IP at intervals default [500] sec |
 
 ---
 
