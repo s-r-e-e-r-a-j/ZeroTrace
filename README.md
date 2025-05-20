@@ -12,7 +12,7 @@ ZeroTrace is a powerful ethical hacking tool for anonymization, developed in Bas
 - Lets you manually or automatically change your IP
 - Shows your current Tor IP and location
 - Easy to use with a beginner-friendly interface
-- Works on  ** Debian,RedHat,Arch** 
+- Works on **Debian,RedHat,Arch** 
 
 ---
 
