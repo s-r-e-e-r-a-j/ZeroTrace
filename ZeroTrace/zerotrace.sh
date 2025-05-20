@@ -218,7 +218,7 @@ install_jq() {
         return 0
     fi
 
-    echo " [*] Tor is not installed. Attempting to install jq..."
+    echo " [*] jq is not installed. Attempting to install jq..."
 
     case "$DISTRO" in
         debian)
