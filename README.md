@@ -101,7 +101,7 @@ This tool is made only for ethical hacking, privacy, and educational use. Do not
 
 ## Uninstallation
 
-**Run the install.py script**
+**Run the install.sh script**
 
 **Then type `n` for uninstall**
 
