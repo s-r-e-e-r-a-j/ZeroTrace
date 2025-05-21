@@ -313,7 +313,7 @@ main() {
 }
 
 show_usage() {
-    echo "Usage: $0 [OPTION]"
+    echo "Usage: zerotrace [OPTION]"
     echo "Route your internet traffic through Tor with automatic IP switching"
     echo
     echo "Options:"
