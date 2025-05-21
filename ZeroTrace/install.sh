@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 
+if [ -z "$BASH_VERSION" ]; then
+    echo -e "\e[31m[!]\e[0m Error: This script must be run with Bash."
+    exit 1
+fi
+
 # Require root
 if [[ "$EUID" -ne 0 ]]; then
-    echo "[!] Please run this script as root."
+    echo -e "\e[31m[!]\e[0m Please run this script as root."
     exit 1
 fi
 
