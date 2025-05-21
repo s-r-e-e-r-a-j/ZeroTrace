@@ -314,7 +314,6 @@ main() {
 
 show_usage() {
     echo "Usage: zerotrace [OPTION]"
-    echo "Route your internet traffic through Tor with automatic IP switching"
     echo
     echo "Options:"
     echo "  -s, --start       Start ZeroTrace (route traffic through Tor)"
