@@ -192,7 +192,7 @@ install_tor() {
             apt-get update && apt-get install -y tor || return 1
             ;;
         fedora)
-            sudo dnf update -y && sudo dnf install -y tor || return 1
+            dnf update -y && dnf install -y tor || return 1
             ;;
         arch)
             pacman -Syu --noconfirm tor || return 1
@@ -225,7 +225,7 @@ install_jq() {
             apt-get update && apt-get install -y jq || return 1
             ;;
         fedora)
-            sudo dnf update -y && sudo dnf install -y jq || return 1
+            dnf update -y && dnf install -y jq || return 1
             ;;
         arch)
             pacman -Syu --noconfirm jq || return 1
