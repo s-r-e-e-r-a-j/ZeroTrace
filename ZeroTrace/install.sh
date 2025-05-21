@@ -15,7 +15,7 @@ if [[ "$choice" == "y" ]]; then
     cp zerotrace.sh /usr/share/zerotrace/zerotrace.sh
 
     # Shell wrapper
-    echo -e "#!/bin/bash\nexec /usr/share/zerotrace/zerotrace.sh \"\$@\"" > /usr/bin/zerotrace
+    echo -e "#!/usr/bin/env bash\nexec /usr/share/zerotrace/zerotrace.sh \"\$@\"" > /usr/bin/zerotrace
 
     chmod +x /usr/bin/zerotrace
     chmod +x /usr/share/zerotrace/zerotrace.sh
