@@ -173,6 +173,13 @@ change_ip_address() {
     show_current_ip
 }
 
+check_bash() {
+  if [ -z "$BASH_VERSION" ]; then
+    echo -e "\e[31m[!]\e[0m Error: This script must be run with Bash."
+    exit 1
+  fi
+}
+
 check_root() {
     if [ "$EUID" -ne 0 ]; then
         echo -e " \033[91m[!]\033[0m please run as root or with sudo."
@@ -247,6 +254,7 @@ install_jq() {
 }
 
 main() {
+    check_bash
     check_root
     
     if ! install_tor; then
