@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ -z "$BASH_VERSION" ]; then
-    printf "\e[31m[!]\e[0m Error: This script must be run with Bash.\n"
+    printf "\033[31m[!]\033[0m Error: This script must be run with Bash.\n"
     exit 1
 fi
 
