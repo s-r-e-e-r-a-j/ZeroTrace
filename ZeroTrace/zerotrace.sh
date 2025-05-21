@@ -195,7 +195,7 @@ install_tor() {
             dnf install -y tor || return 1
             ;;
         arch)
-            pacman -Sy --noconfirm tor || return 1
+            pacman -Syu --noconfirm tor || return 1
             ;;
         *)
             echo " [-] Unsupported distribution. Please install Tor manually."
@@ -228,7 +228,7 @@ install_jq() {
             dnf install -y jq || return 1
             ;;
         arch)
-            pacman -Sy --noconfirm jq || return 1
+            pacman -Syu --noconfirm jq || return 1
             ;;
         *)
             echo " [-] Unsupported distribution. Please install jq manually."
