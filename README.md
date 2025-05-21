@@ -60,6 +60,7 @@ sudo zerotrace [option]
 | `--ip`             | `-i`       | Show current Tor IP and location              |
 | `--new-ip`         | `-n`       | Request a new identity from Tor               |
 | `--auto`           | `-a`       | Auto change IP at intervals (default:500 sec) |
+| `--help`           | `-h`       | show help message                             |
 
 ---
 
