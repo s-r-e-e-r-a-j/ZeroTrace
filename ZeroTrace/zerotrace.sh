@@ -174,7 +174,7 @@ change_ip_address() {
 }
 
 check_root() {
-    if [ "$(id -u)" -ne 0 ]; then
+    if [ "$EUID" -ne 0 ]; then
         echo -e " \033[91m[!]\033[0m please run as root or with sudo."
         exit 1
     fi
