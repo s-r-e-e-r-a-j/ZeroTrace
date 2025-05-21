@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Require root
 if [[ "$EUID" -ne 0 ]]; then
