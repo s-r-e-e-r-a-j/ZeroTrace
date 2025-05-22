@@ -16,11 +16,11 @@ LOG_FILE="zerotrace.log"  # Log file path
 # Detect Linux distribution
 detect_distribution() {
     if [ -f /etc/os-release ]; then
-        if grep -qi "debian" /etc/os-release || grep -qi "ubuntu" /etc/os-release; then
+        if grep -qi "debian" /etc/os-release || grep -qi "ubuntu" /etc/os-release || grep -qi "kali" /etc/os-release || grep -qi "parrot" /etc/os-release || grep -qi "linuxmint" /etc/os-release || grep -qi "raspbian" /etc/os-release; then
             echo "debian"
-        elif grep -qi "fedora" /etc/os-release || grep -qi "centos" /etc/os-release || grep -qi "rhel" /etc/os-release; then
+        elif grep -qi "fedora" /etc/os-release || grep -qi "centos" /etc/os-release || grep -qi "rhel" /etc/os-release || grep -qi "red hat" /etc/os-release || grep -qi "rocky" /etc/os-release || grep -qi "alma" /etc/os-release; then
             echo "fedora"
-        elif grep -qi "arch" /etc/os-release; then
+        elif grep -qi "arch" /etc/os-release || grep -qi "manjaro" /etc/os-release || grep -qi "endeavouros" /etc/os-release; then
             echo "arch"
         else
             echo "unknown"
