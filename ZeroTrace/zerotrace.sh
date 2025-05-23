@@ -37,7 +37,7 @@ if [ "$DISTRO" = "debian" ]; then
     TOR_USER=$(id -ur debian-tor 2>/dev/null)
 elif [ "$DISTRO" = "fedora" ]; then
     TOR_USER=$(id -ur toranon 2>/dev/null)
-else
+elif [ "$DISTRO" = "arch" ]; then
     TOR_USER=$(id -ur tor 2>/dev/null)  # Fallback for other distributions
 fi
 
