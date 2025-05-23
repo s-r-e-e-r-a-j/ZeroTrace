@@ -38,7 +38,7 @@ if [ "$DISTRO" = "debian" ]; then
 elif [ "$DISTRO" = "fedora" ]; then
     TOR_USER=$(id -ur toranon 2>/dev/null)
 elif [ "$DISTRO" = "arch" ]; then
-    TOR_USER=$(id -ur tor 2>/dev/null)  # Fallback for other distributions
+    TOR_USER=$(id -ur tor 2>/dev/null)  
 fi
 
 # Configuration to append to torrc file
