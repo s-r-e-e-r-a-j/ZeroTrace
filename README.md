@@ -19,7 +19,7 @@ ZeroTrace is a powerful ethical hacking tool for anonymization, developed in Bas
 ## Requirements
 - **Gnu Bash**
 - **Linux distros like Debian, RedHat, Arch** 
-- **Tor and jq (automatically installed if not found)**
+- **Tor, jq  and iptables (automatically installed if not found)**
 
 ---
 
