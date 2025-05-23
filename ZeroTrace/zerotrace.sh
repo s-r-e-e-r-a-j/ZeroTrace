@@ -20,7 +20,7 @@ detect_distribution() {
             echo "debian"
         elif grep -qi "fedora" /etc/os-release || grep -qi "centos" /etc/os-release || grep -qi "rhel" /etc/os-release || grep -qi "red hat" /etc/os-release || grep -qi "redhat" /etc/os-release || grep -qi "rocky" /etc/os-release || grep -qi "alma" /etc/os-release; then
             echo "fedora"
-        elif grep -qi "arch" /etc/os-release || grep -qi "manjaro" /etc/os-release || grep -qi "endeavouros" /etc/os-release; then
+        elif grep -qi "arch" /etc/os-release || grep -qi "manjaro" /etc/os-release || grep -qi "endeavouros" /etc/os-release || grep -qi "blackarch" /etc/os-release; then
             echo "arch"
         else
             echo "unknown"
