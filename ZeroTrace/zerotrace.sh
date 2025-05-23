@@ -253,6 +253,39 @@ install_jq() {
     fi
 }
 
+install_iptables() {
+    if command -v iptables >/dev/null 2>&1; then
+        return 0
+    fi
+
+    echo " [*] iptables is not installed. Attempting to install jq..."
+
+    case "$DISTRO" in
+        debian)
+            apt-get update && apt-get install -y iptables || return 1
+            ;;
+        fedora)
+            dnf update -y && dnf install -y iptables || return 1
+            ;;
+        arch)
+            pacman -Syu --noconfirm iptables || return 1
+            ;;
+        *)
+            echo " [-] Unsupported distribution. Please install iptables manually."
+            return 1
+            ;;
+    esac
+
+    if command -v iptables >/dev/null 2>&1; then
+        echo " [+] iptables installed successfully."
+        clear
+        return 0
+    else
+        echo " [-] iptables installation failed."
+        return 1
+    fi
+}
+
 main() {
     check_bash
     check_root
@@ -262,6 +295,10 @@ main() {
     fi
     
     if ! install_jq; then
+         exit 1
+    fi
+
+    if ! install_iptables; then
          exit 1
     fi
     
