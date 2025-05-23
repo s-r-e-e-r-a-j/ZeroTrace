@@ -258,7 +258,7 @@ install_iptables() {
         return 0
     fi
 
-    echo " [*] iptables is not installed. Attempting to install jq..."
+    echo " [*] iptables is not installed. Attempting to install iptables..."
 
     case "$DISTRO" in
         debian)
