@@ -16,6 +16,11 @@ ZeroTrace is a powerful ethical hacking tool for anonymization, developed in Bas
 
 ---
 
+## Disclaimer
+This tool is made only for ethical hacking, privacy, and educational use. Do not use it for illegal purposes. The author is not responsible for any misuse.
+
+---
+
 ## Requirements
 - **Gnu Bash**
 - **Linux distros like Debian, RedHat, Arch** 
@@ -93,11 +98,6 @@ sudo zerotrace --auto 300
 ```bash
 sudo zerotrace --stop
 ```
----
-
-## Disclaimer
-This tool is made only for ethical hacking, privacy, and educational use. Do not use it for illegal purposes. The author is not responsible for any misuse.
-
 ---
 
 ## Uninstallation
