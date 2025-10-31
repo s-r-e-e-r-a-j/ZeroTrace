@@ -108,11 +108,5 @@ sudo zerotrace --stop
 
 ---
 
-## Author
-- **Sreeraj**
-- **GitHub:** https://github.com/s-r-e-e-r-a-j 
-
---- 
-
 ## License
 This project is licensed under the MIT License.
