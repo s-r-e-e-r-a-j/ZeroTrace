@@ -202,7 +202,7 @@ install_tor() {
             dnf update -y && dnf install -y tor || return 1
             ;;
         arch)
-            pacman -Sy --noconfirm tor || return 1
+            pacman -Syu --noconfirm tor || return 1
             ;;
         *)
             echo " [-] Unsupported distribution. Please install Tor manually."
@@ -235,7 +235,7 @@ install_jq() {
             dnf update -y && dnf install -y jq || return 1
             ;;
         arch)
-            pacman -Sy --noconfirm jq || return 1
+            pacman -Syu --noconfirm jq || return 1
             ;;
         *)
             echo " [-] Unsupported distribution. Please install jq manually."
@@ -268,7 +268,7 @@ install_iptables() {
             dnf update -y && dnf install -y iptables || return 1
             ;;
         arch)
-            pacman -Sy --noconfirm iptables || return 1
+            pacman -Syu --noconfirm iptables || return 1
             ;;
         *)
             echo " [-] Unsupported distribution. Please install iptables manually."
